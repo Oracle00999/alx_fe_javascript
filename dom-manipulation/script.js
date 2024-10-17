@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
         text: newQuoteTextValue,
         category: newQuoteCategoryValue,
       };
-      quoteDisplay.textContent = `${newQuote.text} - category ${newQuote.category}`;
+      quoteDisplay.innerHTML = `${newQuote.text} - category ${newQuote.category}`;
       console.log(newQuoteTextValue);
       console.log(newQuoteCategoryValue);
       quoteObjects.push(newQuote);
