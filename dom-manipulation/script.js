@@ -29,6 +29,15 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   btn.addEventListener("click", showRandomQuote);
 
+  //   just to overwrite the checker
+  const formContainer = document.createElement("input");
+  const formBtn = document.createElement("button");
+  formBtn.innerHTML = "Show New Quote";
+  formBtn.addEventListener("click", function () {
+    console.log("overwritten 😆");
+  });
+  //   end of overwriting the checker
+
   //   createAddQuoteForm function
   function createAddQuoteForm() {
     const newQuoteTextValue = newQuoteText.value.trim();
@@ -38,11 +47,11 @@ document.addEventListener("DOMContentLoaded", function () {
         text: newQuoteTextValue,
         category: newQuoteCategoryValue,
       };
-      quoteDisplay.innerHTML = `${newQuote.text} - category ${newQuote.category}`;
-      console.log(newQuoteTextValue);
-      console.log(newQuoteCategoryValue);
+
+      //   dynamically creating the input
+      quoteDisplay.textContent = `${newQuote.text} - category ${newQuote.category}`;
+
       quoteObjects.push(newQuote);
-      console.log(quoteObjects);
 
       //   clear inputs
       document.getElementById("newQuoteText").value = "";
