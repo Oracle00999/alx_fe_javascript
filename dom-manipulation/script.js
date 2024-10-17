@@ -32,6 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
   //   just to overwrite the checker
   const formContainer = document.createElement("input");
   const formBtn = document.createElement("button");
+  formContainer.appendChild(formBtn);
   formBtn.innerHTML = "Show New Quote";
   formBtn.addEventListener("click", function () {
     console.log("overwritten 😆");
